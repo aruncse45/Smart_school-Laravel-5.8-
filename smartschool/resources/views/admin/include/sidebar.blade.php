@@ -5,6 +5,7 @@
 <ul id="" style="margin-top: 0;" class="list-unstyled components">
     
     <li>
+<<<<<<< HEAD
         <a  href="#pageSubmenu44" data-toggle="collapse" aria-expanded="false"  style="text-align: center;" ><button style="background-color: red; color: white" class="btn btn-lg btn-success btn-block">OLD MENU</button> 
         </a>
         <ul class="collapse list-unstyled" id="pageSubmenu44">
@@ -244,6 +245,12 @@
         </ul>
 </li>
     <li>
+=======
+        <a  href="#pageSubmenu44" data-toggle="collapse" aria-expanded="false"  style="text-align: center;" ><button style="background-color: red; color: white" class="btn btn-lg btn-success btn-block">MENU</button> 
+        </a>
+        <ul class="collapse list-unstyled" id="pageSubmenu44">
+            <li>
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
                 <a id="a1" class="facility" href="{{url('/new_notice_news_events')}}"><i class="fa fa-list-alt" aria-hidden="true"></i> NOTICE/EVENTS/NEWS</a>
             </li>
             <li>
@@ -377,6 +384,7 @@
                     </li>
                 </ul>
             </li>
+<<<<<<< HEAD
 </ul>
 
 
@@ -388,3 +396,10 @@
 
             
         
+=======
+        </ul>
+    </li>
+
+    
+</ul>
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c

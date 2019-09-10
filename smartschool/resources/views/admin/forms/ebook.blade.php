@@ -17,7 +17,11 @@
     </div>
   </div>
   
+<<<<<<< HEAD
   <button type="submit" class="btn btn-success">Submit</button>
+=======
+  <button type="submit" class="btn btn-lg btn-success btn-block">Submit</button>
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
   
 {!! Form::close() !!}
 @endsection

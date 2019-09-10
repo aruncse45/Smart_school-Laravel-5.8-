@@ -568,7 +568,11 @@ class homepagecontroller extends Controller
         
         $class = $request->Class;
         
+<<<<<<< HEAD
         $for_student_id = DB::table('admission_ids')
+=======
+        $for_student_id = DB::table('students_ids')
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
                         ->where('Class', $class)
                         ->first();
 
@@ -587,16 +591,24 @@ class homepagecontroller extends Controller
         $make_arr = array('Username' => $adil_name, 'Password'=>$adil_pass, 'Student_id'=>$adil_id);
         DB::table('students_login_infos')->insert($make_arr);
         
+<<<<<<< HEAD
         DB::table('admission_ids')
             ->where('Class', $class)
             ->update(['Last_id' => $adil_id]);
         $sinfo->final = "no";
+=======
+        DB::table('students_ids')
+            ->where('Class', $class)
+            ->update(['Last_id' => $adil_id]);
+
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
         $sinfo->Name = $request->Name;
         $sinfo->Nick_name = $request->Nick_name;
         $sinfo->Student_id = $Student_id;
         $sinfo->Class = $request->Class;
         $sinfo->Session = $request->Session;
         $sinfo->Section = '';
+<<<<<<< HEAD
         $sinfo->Previous_school = $request->Previous_school;
         $sinfo->Psc_grade = $request->Psc_grade ;
         $sinfo->Jsc_grade = $request->Jsc_grade ;
@@ -623,6 +635,22 @@ class homepagecontroller extends Controller
         $sinfo->Mothers_mobile_no = $request->Mothers_mobile_no ;
         $sinfo->Mothers_occupation = $request->Mothers_occupation ;
         
+=======
+        $sinfo->Father_name = $request->Father_name;
+        $sinfo->Mother_name = $request->Mother_name;
+        $sinfo->Birth_date = $request->Birth_date;
+        $sinfo->Gender = $request->Gender;
+        $sinfo->Blood_group = $request->Blood_group;
+        $sinfo->Mobile_no = $request->Mobile_no;
+        $sinfo->Address = $request->Address;
+        $sinfo->District = $request->District;
+        $sinfo->Division = $request->Division;
+        $sinfo->Nationality = $request->Nationality;
+        $sinfo->remember_token = $request->_token;
+        $sinfo->Image = '';
+        $sinfo->Extra_activities = $request->Extra_activities;
+        $sinfo->Admission_date = $request->Admission_date;
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
         $sinfo->save();
 
         $lastid = $sinfo->id;

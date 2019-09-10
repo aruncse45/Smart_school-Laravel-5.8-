@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
@@ -39,7 +42,11 @@ use Barryvdh\DomPDF\Facade as PDF;
 class admincontroller extends Controller
 {
     public function admin_login(Request $request){
+<<<<<<< HEAD
     	//dd($request->all());
+=======
+    	dd($request->all());
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
     }
 
     public function admin_profile($email){
@@ -204,12 +211,16 @@ class admincontroller extends Controller
     }
 
     public function result(){
+<<<<<<< HEAD
 
         $result = DB::table('results')
                 ->select('*')
                 ->get();
 
         return view('admin.forms.result',['result'=>$result]);
+=======
+        return view('admin.forms.result');
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
     }
     public function save_result_info(Request $request){
         $request->session()->put('Class',$request->input('Class'));
@@ -491,6 +502,7 @@ class admincontroller extends Controller
 
     public function save_students_info(Request $request){
                 
+<<<<<<< HEAD
         $class = $request->Class;
         $for_student_id = DB::table('admission_ids')
                     ->where('Class', $class)
@@ -564,6 +576,67 @@ class admincontroller extends Controller
             $updateimage->save();
         }
             
+=======
+            $class = $request->Class;
+            $for_student_id = students_id::where('Class', '=', $class)->first();
+            $Student_id = $for_student_id->Last_id+1;
+
+            $sinfo = new students_information();
+
+            $password = $Student_id; 
+            $hashed = Hash::make($password);
+
+            $adil_id = $Student_id;
+            $adil_name = $request->Nick_name;
+            $adil_pass = $hashed;
+            $class = $request->Class;
+
+            $make_arr = array('Username' => $adil_name, 'Password'=>$adil_pass, 'Student_id'=>$adil_id);
+            DB::table('students_login_infos')->insert($make_arr);
+            
+            DB::table('students_ids')
+                ->where('Class', $class)
+                ->update(['Last_id' => $adil_id]);
+
+            $sinfo->Name = $request->Name;
+            $sinfo->Nick_name = $request->Nick_name;
+            $sinfo->Student_id = $Student_id;
+            $sinfo->Class = $request->Class;
+            $sinfo->Session = $request->Session;
+            $sinfo->Section = '';
+            $sinfo->Father_name = $request->Father_name;
+            $sinfo->Mother_name = $request->Mother_name;
+            $sinfo->Birth_date = $request->Birth_date;
+            $sinfo->Gender = $request->Gender;
+            $sinfo->Blood_group = $request->Blood_group;
+            $sinfo->Mobile_no = $request->Mobile_no;
+            $sinfo->Address = $request->Address;
+            $sinfo->District = $request->District;
+            $sinfo->Division = $request->Division;
+            $sinfo->Nationality = $request->Nationality;
+            $sinfo->remember_token = $request->_token;
+            $sinfo->Image = '';
+            $sinfo->Extra_activities = $request->Extra_activities;
+            $sinfo->Admission_date = $request->Admission_date;
+            $sinfo->save();
+
+
+            $lastid = $sinfo->id;
+            $simage = $request->file('Image');
+            if ($simage) {
+
+                $name = $lastid.$simage->getClientOriginalName();
+                $uploadpath = 'admin/upload_image/';
+                $simage->move($uploadpath,$name);
+                $imageurl = $name;
+
+                $updateimage = students_information::find($lastid);
+                $updateimage->Image = $imageurl;
+                $updateimage->save();
+            }
+            
+
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
             return redirect('/student_profile')->with('msg','DONE');
         
     }
@@ -1071,11 +1144,15 @@ class admincontroller extends Controller
     }
 
     public function visit_student_profile(){
+<<<<<<< HEAD
         $array=DB::table("students_informations")
             ->select('*')
             ->where('class','20')
             ->get();
         return view('admin.forms.visit_student_profile',['result'=>$array]);
+=======
+        return view('admin.forms.visit_student_profile');
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
     }
 
     public function view_student_profile(Request $request){
@@ -1095,7 +1172,11 @@ class admincontroller extends Controller
 
         }
         if (count($result)>0){
+<<<<<<< HEAD
             return view('admin.forms.visit_student_profile',['result'=>$result]);
+=======
+            return view('admin.forms.view_student_profile',['result'=>$result]);
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
         }
         else{
             return redirect('/visit_student_profile')->with('msg', 'Wrong info or Data is not updated');

@@ -1,6 +1,7 @@
 @extends('admin.adminpage')
 
 @section('maincontent')
+<<<<<<< HEAD
 <h4 id="e">RESULT</h4><br>
 <div style="text-align: center;"><marquee style="width: 10%; background-color: black; color: white;" scrollamount="2" behavior = "alternate">{{Session::get('msg')}}</marquee></div>
 {!! Form::open(['url' => '/save_result', 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
@@ -15,11 +16,28 @@
       <input type="text" class="form-control" id="inputPassword4" name="Session" placeholder="Session......" required>
     </div>
    <div class="form-group col-md-4">
+=======
+<h4 id="e">RESULT</h4><br><br>
+<div style="text-align: center;"><marquee style="width: 10%; background-color: black; color: white;" scrollamount="2" behavior = "alternate">{{Session::get('msg')}}</marquee></div>
+{!! Form::open(['url' => '/save_result', 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
+  
+  
+     <div class="form-group">
+      <label for="inputEmail4">Class</label>
+      <input type="text" class="form-control" id="inputPassword4" name="Class" placeholder="Class...." required>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword4">Session</label>
+      <input type="text" class="form-control" id="inputPassword4" name="Session" placeholder="Session......" required>
+    </div>
+   <div class="form-group">
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
       <label for="inputEmail4">Exam name</label>
       <select id="inputState" class="form-control" name="Exam_name" required>
         <option disabled selected>Select...</option>
         <option>Half yearly</option>
         <option>Final</option>
+<<<<<<< HEAD
         <option>Admission test</option>
       </select>
     </div>
@@ -67,5 +85,16 @@
 
     </tbody>
   </table>
+=======
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail4">Result (CSV file)</label>
+      <input type="file" class="form-control" id="Image" name="Result" placeholder="Result (must be CSV file)" required>
+    </div>
+    <button type="submit" class="btn btn-lg btn-success btn-block">Submit</button>
+
+  {!! Form::close() !!}
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
 @endsection
 

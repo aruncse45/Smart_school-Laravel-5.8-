@@ -11,6 +11,7 @@ Auth::routes();
 //$this->get('/admin/login','Auth\LoginController@showLoginForm')->name('login');
 Route::get('/admin/123', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
 
 	//////////////Admission/////////////////////.........................
 
@@ -46,6 +47,8 @@ Route::get('/admin/123', 'HomeController@index')->name('home');
 
 
 
+=======
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
 			Route::get('/about_school','admincontroller@about_school')->middleware('admin_url_checking');
 			Route::get('/booklist','admincontroller@booklist')->middleware('admin_url_checking');
 			Route::get('/new_notice_news_events','admincontroller@new_notice_news_events')->middleware('admin_url_checking');
@@ -53,7 +56,11 @@ Route::get('/admin/123', 'HomeController@index')->name('home');
 			Route::get('/result','admincontroller@result')->middleware('admin_url_checking');
 			Route::get('/routine','admincontroller@routine')->middleware('admin_url_checking');
 			Route::get('/speech','admincontroller@speech')->middleware('admin_url_checking');
+<<<<<<< HEAD
 			
+=======
+			Route::get('/student_profile','admincontroller@student_profile')->middleware('admin_url_checking');
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
 			Route::get('/syllabus','admincontroller@syllabus')->middleware('admin_url_checking');
 			Route::get('/teachers_staffs_profile','admincontroller@teachers_staffs_profile')->middleware('admin_url_checking');
 			Route::get('/change_teachers_staffs_profile','admincontroller@change_teachers_staffs_profile')->middleware('admin_url_checking');

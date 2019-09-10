@@ -31,7 +31,11 @@
           <td>{{$p->Session}}</td>
           <td>{{$p->Name}}</td>
           <td>{{$p->Roll}}</td>
+<<<<<<< HEAD
           <td>{{$p->Bangla_1st}}</td>
+=======
+          <td>{{$p->Bangla}}</td>
+>>>>>>> ff0675d14c7eb1043c2b4e8148c73b2957f55b9c
         </tr>
       @endforeach
 
