@@ -1,6 +1,2 @@
-* text=auto
- *.* linguist-language=Laravel 5.8
-*.css linguist-vendored
-*.scss linguist-vendored 
-*.js linguist-vendored
-CHANGELOG.md export-ignore
+*.* linguist-language=Laravel 5.8
+
